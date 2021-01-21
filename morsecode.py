@@ -250,7 +250,7 @@ def decoding_sentence(morse_sentence):
         if i == "":
             result += " "
         else:
-            result += encoding_character(i.upper())
+            result += decoding_character(i.upper())
             result += " "       
 
     return result
