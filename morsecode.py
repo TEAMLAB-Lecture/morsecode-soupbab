@@ -1,5 +1,5 @@
 # -*- coding: utf8 -*-
-import re
+
 
 # Help Function - 수정하지 말 것
 def get_morse_code_dict():
@@ -282,6 +282,8 @@ def encoding_sentence(english_sentence):
 def main():
     print("Morse Code Program!!")
     # ===Modify codes below=============
+    
+    import re
     
     while True:
         user_input = input("Input your message(H - Help, 0 - Exit) : ").upper()
