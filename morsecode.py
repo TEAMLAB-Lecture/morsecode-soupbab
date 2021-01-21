@@ -244,15 +244,17 @@ def decoding_sentence(morse_sentence):
     # 조건에 따라 변환되어야 할 결과를 result 변수에 할당 또는 필요에 따라 자유로운 수정
 
     temp_list = morse_sentence.split(" ")
-
+    
     result = ""
     for i in temp_list:
         if i == "":
             result += " "
         else:
-            result += decoding_character(i)    
+            result += encoding_character(i.upper())
+            result += " "       
 
     return result
+    return "".join(map(decoding_character, morse_sentence.split()))
     # ==================================
 
 
@@ -277,15 +279,17 @@ def encoding_sentence(english_sentence):
     # ===Modify codes below=============
     # 조건에 따라 변환되어야 할 결과를 result 변수에 할당 또는 필요에 따라 자유로운 수정
 
-    result = ""
-    for i in get_cleaned_english_sentence(english_sentence):
-        if i == " ":
-            result += " "
-        else:
-            result += encoding_character(i.upper())
-            result += " "       
+    temp_list = get_cleaned_english_sentence(english_sentence).split()
 
-    return result
+    result = ""
+    for word in temp_list:
+        for i in word:
+            result += encoding_character(i.upper())
+            result += " "
+
+        result += " "
+
+    return result[:-1]
     # ==================================
 
 
