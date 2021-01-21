@@ -254,7 +254,6 @@ def decoding_sentence(morse_sentence):
             result += " "       
 
     return result
-    return "".join(map(decoding_character, morse_sentence.split()))
     # ==================================
 
 
