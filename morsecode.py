@@ -243,7 +243,16 @@ def decoding_sentence(morse_sentence):
     # ===Modify codes below=============
     # 조건에 따라 변환되어야 할 결과를 result 변수에 할당 또는 필요에 따라 자유로운 수정
 
-    return "".join(map(decoding_character, morse_sentence.split()))
+    temp_list = morse_sentence.split(" ")
+
+    result = ""
+    for i in temp_list:
+        if i == "":
+            result += " "
+        else:
+            result += decoding_character(i)    
+
+    return result
     # ==================================
 
 
